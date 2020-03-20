@@ -1,6 +1,7 @@
 package com.jx.pay.service.impl;
 
 import com.jx.pay.PayApplicationTest;
+import com.lly835.bestpay.enums.BestPayTypeEnum;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,7 +16,7 @@ public class PayServiceTest extends PayApplicationTest {
 
     @Test
     public void create() {
-        payService.create("616980152222222", BigDecimal.valueOf(0.01));
+        payService.create("616980152222222", BigDecimal.valueOf(0.01), BestPayTypeEnum.WXPAY_NATIVE);
     }
 
 }
