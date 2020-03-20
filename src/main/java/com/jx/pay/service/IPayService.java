@@ -1,5 +1,6 @@
 package com.jx.pay.service;
 
+import com.jx.pay.pojo.PayInfo;
 import com.lly835.bestpay.enums.BestPayTypeEnum;
 import com.lly835.bestpay.model.PayResponse;
 
@@ -18,5 +19,9 @@ public interface IPayService {
      */
     String asyncNotify(String notifyData);
 
+    /*
+    查询支付记录
+     */
 
+    PayInfo queryByOrderId(String orderId);
 }
