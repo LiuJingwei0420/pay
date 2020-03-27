@@ -1,7 +1,7 @@
 package com.jx.pay.controller;
 
 import com.jx.pay.pojo.PayInfo;
-import com.jx.pay.service.impl.PayService;
+import com.jx.pay.service.impl.PayServiceImpl;
 import com.lly835.bestpay.config.WxPayConfig;
 import com.lly835.bestpay.enums.BestPayTypeEnum;
 import com.lly835.bestpay.model.PayResponse;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.ws.rs.POST;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,13 +20,13 @@ import java.util.Map;
 public class PayController {
 
     @Autowired
-    private PayService payService;
+    private PayServiceImpl payService;
 
     @Autowired
     private WxPayConfig wxPayConfig;
 
     @GetMapping("/create")
-    public ModelAndView create(@RequestParam("OrderId") String orderId,
+    public ModelAndView create(@RequestParam("orderId") String orderId,
                                @RequestParam("amount") BigDecimal amount,
                                @RequestParam("payType")BestPayTypeEnum bestPayTypeEnum) {
 
